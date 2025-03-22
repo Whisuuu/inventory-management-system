@@ -176,7 +176,7 @@ if ($_GET['o'] == 'add') {
 						</div>
 					</div> <!--/form-group-->
 					<div class="form-group">
-						<label for="vat" class="col-sm-3 control-label gst">TAX</label>
+						<label for="vat" class="col-sm-3 control-label gst">TAX 2%</label>
 						<div class="col-sm-9">
 							<input type="text" class="form-control" id="vat" name="gstn" readonly="true" />
 							<input type="hidden" class="form-control" id="vatValue" name="vatValue" />
@@ -460,7 +460,7 @@ if ($_GET['o'] == 'add') {
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="gstn" class="col-sm-3 control-label gst">G.S.T.IN</label>
+						<label for="gstn" class="col-sm-3 control-label gst">TAX</label>
 						<div class="col-sm-9">
 							<input type="text" class="form-control" id="gstn" name="gstn" value="<?php echo $data[14] ?>" />
 						</div>

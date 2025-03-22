@@ -3,9 +3,9 @@ var manageOrderTable;
 $(document).ready(function () {
   $("#paymentPlace").change(function () {
     if ($("#paymentPlace").val() == 2) {
-      $(".gst").text("IGST 18%");
+      $(".gst").text("TAX 2%");
     } else {
-      $(".gst").text("GST 18%");
+      $(".gst").text("TAX 2%");
     }
   });
 
@@ -13,7 +13,6 @@ $(document).ready(function () {
 
   // top nav bar
   $("#navOrder").addClass("active");
-
   if (divRequest == "add") {
     // add order
     // top nav child bar
@@ -668,7 +667,7 @@ function subAmount() {
   $("#subTotalValue").val(totalSubAmount);
 
   // vat
-  var vat = (Number($("#subTotal").val()) / 100) * 18;
+  var vat = (Number($("#subTotal").val()) / 100) * 2;
   vat = vat.toFixed(2);
   $("#vat").val(vat);
   $("#vatValue").val(vat);
