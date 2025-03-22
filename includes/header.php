@@ -35,7 +35,7 @@
 <body>
 
 
-	<nav class="navbar navbar-default navbar-static-top">
+	<nav class="navbar  navbar-static-top ">
 		<div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -47,7 +47,7 @@
       </button>
       <!-- <a class="navbar-brand" href="#">Brand</a> -->
 	  <a class="navbar-brand" href="#" style="padding:0px;">
-                    <img src="logo.png" alt="">
+                    <img src="rupp_logo.png" alt="" width="50px" height="50px">
                 </a>
     </div>
 
@@ -77,9 +77,6 @@
 		
 		<?php  if(isset($_SESSION['userId']) && $_SESSION['userId']==1) { ?>
         <li id="navReport"><a href="report.php"> <i class="glyphicon glyphicon-check"></i> Report </a></li>
-		<?php } ?> 
-    <?php  if(isset($_SESSION['userId']) && $_SESSION['userId']==1) { ?>
-        <li id="importbrand"><a href="importbrand.php"> <i class="glyphicon glyphicon-check"></i> Import Brand </a></li>
 		<?php } ?>   
         <li class="dropdown" id="navSetting">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="glyphicon glyphicon-user"></i> <span class="caret"></span></a>

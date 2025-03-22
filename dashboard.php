@@ -10,9 +10,9 @@ $orderSql = "SELECT * FROM orders WHERE order_status = 1";
 $orderQuery = $connect->query($orderSql);
 $countOrder = $orderQuery->num_rows;
 
-$totalRevenue = "";
+$totalRevenue = 0; // Initialize as 0, not an empty string
 while ($orderResult = $orderQuery->fetch_assoc()) {
-	$totalRevenue += $orderResult['paid'];
+    $totalRevenue += $orderResult['paid']; // Add the numeric value of 'paid' to totalRevenue
 }
 
 $lowStockSql = "SELECT * FROM product WHERE quantity <= 3 AND status = 1";

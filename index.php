@@ -66,6 +66,7 @@ if($_POST) {
 
   <!-- custom css -->
   <link rel="stylesheet" href="custom/css/custom.css">	
+  <link rel="stylesheet" href="custom/css/bootstrap-login-form.min.css">	
 
   <!-- jquery -->
 	<script src="assests/jquery/jquery.min.js"></script>
@@ -77,16 +78,28 @@ if($_POST) {
 	<script src="assests/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<div class="container">
-		<div class="row vertical">
-			<div class="col-md-5 col-md-offset-4">
-				<div class="panel panel-info">
-					<div class="panel-heading">
-						<h3 class="panel-title">Please Sign in</h3>
-					</div>
-					<div class="panel-body">
+  <!-- Start your project here-->
 
-						<div class="messages">
+  <style>
+    
+    .h-custom {
+      height: calc(100% - 73px);
+    }
+    @media (max-width: 450px) {
+      .h-custom {
+        height: 100%;
+      }
+    }
+  </style>
+  <section class="vh-100">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-9 col-lg-6 col-xl-5">
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid"
+            alt="Sample image">
+        </div>
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <div class="messages">
 							<?php if($errors) {
 								foreach ($errors as $key => $value) {
 									echo '<div class="alert alert-warning" role="alert">
@@ -95,38 +108,51 @@ if($_POST) {
 									}
 								} ?>
 						</div>
+          <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" id="loginForm">
+            <div class="d-flex flex-row align-items-center justify-content-center justify-content-center mb-4">
+              <p class="lead fw-bold mb-0 me-3 fs-4">Sign in </p>
+            </div>
 
-						<form class="form-horizontal" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" id="loginForm">
-							<fieldset>
-							  <div class="form-group">
-									<label for="username" class="col-sm-2 control-label">Username</label>
-									<div class="col-sm-10">
-									  <input type="text" class="form-control" id="username" name="username" placeholder="Username" autocomplete="off" />
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="password" class="col-sm-2 control-label">Password</label>
-									<div class="col-sm-10">
-									  <input type="password" class="form-control" id="password" name="password" placeholder="Password" autocomplete="off" />
-									</div>
-								</div>								
-								<div class="form-group">
-									<div class="col-sm-offset-2 col-sm-10">
-									  <button type="submit" class="btn btn-default"> <i class="glyphicon glyphicon-log-in"></i> Sign in</button>
-									</div>
-								</div>
-							</fieldset>
-						</form>
-					</div>
-					<!-- panel-body -->
-				</div>
-				<!-- /panel -->
-			</div>
-			<!-- /col-md-4 -->
-		</div>
-		<!-- /row -->
-	</div>
-	<!-- container -->	
+      
+
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+            <label class="form-label" for="username">Username</label>
+              <input type="text" id="username" name="username" class="form-control form-control-lg" autocomplete="off"
+                placeholder="Enter a valid username" />
+            </div>
+
+            <!-- Password input -->
+            <div class="form-outline mb-3">
+            <label class="form-label" for="password">Password</label>
+              <input type="password"  id="password" name="password" class="form-control form-control-lg" autocomplete="off"
+                placeholder="Enter password" />
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center">
+              <!-- Checkbox -->
+              <div class="form-check mb-0">
+                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+                <label class="form-check-label" for="form2Example3">
+                  Remember me
+                </label>
+              </div>
+              <a href="#!" class="text-body">Forgot password?</a>
+            </div>
+
+            <div class="text-center text-lg-start mt-4 pt-2">
+              <button type="submit" class="btn btn-primary btn-lg"
+                style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+              <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="#!"
+                  class="link-danger">Register</a></p>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+    
+  </section>
 </body>
 </html>
 
